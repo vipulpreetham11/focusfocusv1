@@ -1,0 +1,13 @@
+.mainContent {
+    flex: 1;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        margin-left: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,228 @@
+.container {
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+/* Setup Form */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--foreground);
+}
+
+.input {
+    padding: 0.75rem 1rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--foreground);
+    transition: all 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91, 95, 199, 0.1);
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subjectList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subjectItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: var(--muted);
+}
+
+.iconButton:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #ef4444;
+}
+
+.addButton {
+    background: var(--background);
+    border: 1px dashed var(--border);
+    color: var(--accent);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.addButton:hover {
+    border-color: var(--accent);
+    background: rgba(91, 95, 199, 0.05);
+}
+
+.createButton {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background 0.2s;
+}
+
+.createButton:hover {
+    background: var(--accent-hover);
+}
+
+.createButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Overview Mode */
+.overviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.examMeta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.deleteButton {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.deleteButton:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.overviewCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.subjectTitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.chapterCount {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .subjectItem {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .subjectItem .input {
+        width: 100%;
+    }
+
+    .overviewHeader {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .examMeta {
+        flex-wrap: wrap;
+    }
+
+    .deleteButton {
+        width: 100%;
+        text-align: center;
+    }
+}

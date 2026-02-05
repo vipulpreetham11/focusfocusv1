@@ -1,0 +1,44 @@
+/* ===========================================
+   MOBILE HEADER - HIDDEN ON DESKTOP
+   =========================================== */
+.mobileHeader {
+    display: none;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navbar-text);
+}
+
+.hamburgerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--navbar-text);
+}
+
+/* ===========================================
+   MOBILE STYLES (≤768px)
+   =========================================== */
+@media (max-width: 768px) {
+    .mobileHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background-color: var(--navbar-bg);
+        padding: 0 1rem;
+        z-index: 200;
+        border-bottom: 1px solid var(--border);
+    }
+}

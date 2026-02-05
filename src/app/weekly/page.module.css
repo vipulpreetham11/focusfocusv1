@@ -1,0 +1,143 @@
+.container {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+.weekScroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.weekScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.dayCard {
+    flex: 0 0 280px;
+    /* Fixed width */
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    transition: all 0.2s ease;
+}
+
+.dayCardToday {
+    border-color: var(--accent);
+    background: rgba(91, 95, 199, 0.03);
+    box-shadow: 0 4px 12px rgba(91, 95, 199, 0.1);
+}
+
+.dayHeader {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.dayName {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.emptyState {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.taskItem {
+    padding: 0.75rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.taskItemCompleted {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.taskTitle {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.taskTime {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        margin-bottom: 1rem;
+    }
+
+    .weekScroll {
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .dayCard {
+        flex: 0 0 220px;
+        min-height: 300px;
+        padding: 1rem;
+    }
+
+    .date {
+        font-size: 1.25rem;
+    }
+
+    .dayHeader {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+}

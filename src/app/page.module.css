@@ -1,0 +1,670 @@
+/* Main Layout */
+.main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+}
+
+/* Streak Badge */
+.streakBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%);
+    color: #f97316;
+    padding: 0.6rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.streakBadge:hover {
+    transform: translateY(-2px);
+}
+
+.streakIcon {
+    font-size: 1.4rem;
+}
+
+.streakCount {
+    font-weight: 800;
+    font-size: 1.2rem;
+    font-feature-settings: "tnum";
+}
+
+.streakLabel {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+/* Stats Row - Pill Cards */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.statCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.statValue {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--foreground);
+    line-height: 1.2;
+}
+
+.statLabel {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 0.2rem;
+}
+
+/* AI Assistant Section */
+.aiSection {
+    margin: 2.5rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.aiForm {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.aiInput {
+    flex: 1;
+    height: 60px;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: var(--background);
+    color: var(--foreground);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.aiInput:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+    background: var(--background);
+}
+
+.aiInput::placeholder {
+    color: var(--muted-foreground);
+    opacity: 0.7;
+}
+
+.aiSubmit {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aiSubmit:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aiSubmit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--muted);
+}
+
+.aiResponse {
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    animation: slideDown 0.3s ease;
+}
+
+.aiSuccess {
+    background: rgba(34, 197, 94, 0.1);
+    color: #15803d;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.aiError {
+    background: rgba(239, 68, 68, 0.1);
+    color: #b91c1c;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Follow-up Time Options */
+.timeOptions {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease;
+}
+
+.timeOptionsLabel {
+    font-size: 1rem;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeOptionsButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.timeOptionButton {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--background);
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeOptionButton:hover {
+    border-color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.05);
+    transform: translateY(-1px);
+}
+
+.timeOptionButtonStart {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2);
+    transition: all 0.2s ease;
+}
+
+.timeOptionButtonStart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(var(--primary-rgb), 0.25);
+}
+
+.timeOptionsDismiss {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    border: none;
+    background: transparent;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.timeOptionsDismiss:hover {
+    color: var(--foreground);
+    text-decoration: underline;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Subtle gradient top border/blur effect could be added here */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+            rgba(var(--primary-rgb), 0.1),
+            rgba(var(--primary-rgb), 0.5),
+            rgba(var(--primary-rgb), 0.1));
+    opacity: 0.5;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Task List Styles */
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: rgba(var(--muted-rgb), 0.1);
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    color: var(--muted-foreground);
+}
+
+.moreTasksHint {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    padding-top: 0.5rem;
+    font-weight: 500;
+}
+
+.cardFooter {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Timer Section */
+.timer {
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.timerDisplay {
+    font-size: 4rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
+.timerTask {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: rgba(var(--primary-rgb), 0.05);
+    display: inline-block;
+    border-radius: 999px;
+}
+
+.timerControls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timerButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
+    transition: all 0.2s ease;
+}
+
+.timerButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(var(--primary-rgb), 0.3);
+}
+
+.timerButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--muted);
+    box-shadow: none;
+}
+
+.timerButtonSecondary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timerButtonSecondary:hover:not(:disabled) {
+    background: var(--background);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.timerButtonDanger {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+    transition: all 0.2s ease;
+}
+
+.timerButtonDanger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(239, 68, 68, 0.3);
+}
+
+.timerHint {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    opacity: 0.8;
+}
+
+/* Suggestion Section */
+.suggestionSection {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2.5rem;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    border: 1px solid rgba(var(--primary-rgb), 0.1);
+}
+
+.suggestionButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary), #7c3aed);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -5px rgba(124, 58, 237, 0.3);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.suggestionButton:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 30px -10px rgba(124, 58, 237, 0.5);
+}
+
+.suggestionResult {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    animation: fadeIn 0.5s ease;
+}
+
+.suggestionHint {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+}
+
+
+/* End Day Section */
+.endDaySection {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.endDayButton {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px dashed var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.endDayButton:hover {
+    border-color: var(--foreground);
+    color: var(--foreground);
+    background: var(--card-bg);
+}
+
+.endDayMessage {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    color: var(--foreground);
+    animation: slideUp 0.3s ease;
+}
+
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .main {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .statsRow {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .statCard {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .statLabel {
+        margin-top: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .timerDisplay {
+        font-size: 3.5rem;
+    }
+
+    .timerControls {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .timerButton,
+    .timerButtonSecondary,
+    .timerButtonDanger {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-width: 100px;
+    }
+
+    .aiForm {
+        gap: 0.5rem;
+    }
+
+    .aiInput {
+        height: 50px;
+        font-size: 0.95rem;
+        padding: 0 1rem;
+        border-radius: 16px;
+    }
+
+    .aiSubmit {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        font-size: 1.25rem;
+    }
+
+    .suggestionSection {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .suggestionButton {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .endDaySection {
+        margin-top: 2rem;
+    }
+
+    .endDayButton {
+        padding: 0.75rem 2rem;
+    }
+}
