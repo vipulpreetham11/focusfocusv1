@@ -1,81 +1,260 @@
-# FocusFlow 🧠⏳
+# ClassSpace
 
-**FocusFlow** is an intelligent, privacy-first study assistant designed to help students overcome procrastination and decision fatigue. By combining smart task management, study timers, and local AI planning, it helps you organize your day effortlessly.
+> AI-native collaborative operating system for classrooms and educational communities.
 
-## 🚀 Why FocusFlow?
-
-Students often struggle not with *doing* the work, but with *planning* it. FocusFlow solves this by:
-*   **Reducing Decision Fatigue**: The "What should I do now?" button picks your next task for you.
-*   **Smart Planning**: Just tell the AI "Plan my day," and it organizes your pending work into a schedule.
-*   **Privacy First**: All your data stays on your device. The AI runs locally (via Ollama), so no data ever leaves your computer.
-
-## ✨ Core Features
-
-### 📅 Smart Dashboard
-*   **Daily Overview**: See today's tasks, study streak, and total focus time at a glance.
-*   **AI Command Bar**: Type naturally (e.g., *"Add math homework for 45 mins"*) to create tasks.
-*   **End Day/Reschedule**: Automatically moves unfinished tasks to tomorrow with one click.
-
-### ⏱️ Focus Timer
-*   **Track Reality vs. Plan**: Compare estimated time against actual study time.
-*   **Distraction-Free**: Simple, clean interface to keep you in the zone.
-
-### 🤖 Smart Day Planner
-*   **One-Click Planning**: The AI analyzes your pending tasks and deadlines.
-*   **Auto-Scheduling**: Generates a time-blocked schedule in your timetable.
-*   **Instant Action**: Automatically starts the timer for the first scheduled task.
-
-### 📊 Progress Tracking
-*   **Streaks**: Build consistency with daily study goals.
-*   **Analytics**: Visualize your daily focus hours and task completion rates.
-
-## 🛠️ Tech Stack
-
-*   **Framework**: Next.js 14 (React, TypeScript)
-*   **Styling**: CSS Modules (Clean, responsive, dark mode)
-*   **State Management**: React Context API
-*   **Data Persistence**: LocalStorage (Zero setup, offline ready)
-*   **AI Engine**: Ollama (Client-side local inference)
-
-## 🏃‍♂️ Getting Started
-
-### Prerequisites
-1.  **Node.js** (v18 or higher)
-2.  **Ollama**: Download from [ollama.com](https://ollama.com).
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/focusflow.git
-    cd focusflow
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Setup AI (Ollama):**
-    *   Install Ollama and run it.
-    *   Pull the Llama 3 model (or any preferred model):
-        ```bash
-        ollama pull llama3
-        ```
-    *   Ensure Ollama is running on `http://localhost:11434` (default).
-
-4.  **Run the app:**
-    ```bash
-    npm run dev
-    ```
-    Open `http://localhost:3000` in your browser.
-
-## 🛡️ Responsible AI Usage
-
-FocusFlow uses AI to **assist**, not replace, your judgment.
-*   **Human in the Loop**: The AI suggests plans, but you always have the final say to edit or reject them.
-*   **Local Privacy**: We use local LLMs (Ollama) to ensure your personal study data and habits are never uploaded to a cloud server.
-*   **Transparent Limits**: The AI is strictly scoped to task management commands to prevent hallucinations or irrelevant outputs.
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![RBAC](https://img.shields.io/badge/Auth-RBAC-blue)
+![AI](https://img.shields.io/badge/AI-Enabled-purple)
 
 ---
-*Built with ❤️ for students.*
+
+## Overview
+
+ClassSpace is an AI-powered collaboration and operational platform designed for colleges, classrooms, and student communities.
+
+It replaces chaotic WhatsApp-based communication systems with a structured, intelligent, and scalable platform for:
+
+- Notices & announcements
+- Notes sharing
+- Anonymous confessions
+- Discussions & Q&A
+- Polls & engagement
+- Student directory
+- Events & birthdays
+- Moderation workflows
+- AI-powered operational insights
+
+Built using modern full-stack architecture with Next.js, Supabase, PostgreSQL, RBAC, and AI-enhanced workflows.
+
+---
+
+# Problem
+
+Traditional classroom communication is fragmented and unorganized.
+
+Important notices get buried inside chats, assignments become difficult to track, discussions disappear in scrolling, and institutions lack operational visibility into student engagement and academic collaboration.
+
+ClassSpace solves this by creating a centralized AI-native operating system for educational communities.
+
+---
+
+# Features
+
+## Student Experience
+
+### 📌 Notices & Alerts
+- Structured notice board
+- Pinned announcements
+- Hot alerts & urgent notifications
+- Reactions & comments
+
+### 📁 Notes Repository
+- Upload & download notes
+- Subject-wise organization
+- Search & filters
+- Bookmarking system
+- File engagement tracking
+
+### 🗣️ Anonymous Confessions
+- Fully anonymous posting
+- Emoji reactions
+- Moderation pipeline
+- Trending confession feed
+
+### 💬 Discussion Threads
+- Subject-wise discussions
+- Nested replies
+- Upvotes & engagement
+- Community-driven Q&A
+
+### 👥 Student Directory
+- Searchable student profiles
+- Contribution statistics
+- Community leaderboard
+
+### 🎉 Engagement Systems
+- Birthdays & celebrations
+- Polls & voting
+- Meme wall
+- Events & reminders
+
+---
+
+# Administrative Controls
+
+## 🔐 Role-Based Access Control (RBAC)
+- Admin & student role separation
+- Protected workflows
+- Moderation permissions
+- Secure access layers
+
+## 🛡️ Moderation System
+- Approve/reject confessions
+- Manage uploads & discussions
+- User moderation workflows
+- Community governance tools
+
+## 📊 Analytics Dashboard
+- Student engagement analytics
+- Contribution leaderboards
+- Activity insights
+- Operational statistics
+
+## 🔔 Operational Alerts
+- Hot notifications
+- Broadcast announcements
+- Critical alerts system
+
+---
+
+# AI Layer
+
+ClassSpace integrates AI-native operational intelligence workflows designed for educational communities.
+
+## AI Features
+- AI-generated operational summaries
+- Student engagement analysis
+- Activity intelligence
+- Retrieval-enhanced insights
+- AI moderation assistance
+- Community trend detection
+
+## AI Architecture
+
+The system uses structured retrieval pipelines to analyze:
+
+- student activity
+- academic interactions
+- engagement patterns
+- community participation
+- operational workflows
+
+This enables proactive AI-generated insights for administrators and educational communities.
+
+---
+
+# System Architecture
+
+```text
+Next.js Frontend
+        ↓
+Supabase Auth + PostgreSQL
+        ↓
+RBAC + Row Level Security
+        ↓
+Operational Intelligence Layer
+        ↓
+AI Insights & Retrieval Pipelines
+```
+
+---
+
+# Tech Stack
+
+## Frontend
+- Next.js
+- React
+- TypeScript
+- TailwindCSS
+
+## Backend
+- Supabase
+- PostgreSQL
+- Row Level Security (RLS)
+
+## Infrastructure
+- Vercel
+- GitHub Actions
+
+## AI Infrastructure
+- Retrieval pipelines
+- Context builders
+- AI-generated summaries
+- Operational intelligence workflows
+
+---
+
+# Screenshots
+
+## Dashboard
+<img width="100%" src="./screenshots/dashboard.png"/>
+
+## Notes System
+<img width="100%" src="./screenshots/notes.png"/>
+
+## Discussion Threads
+<img width="100%" src="./screenshots/discussions.png"/>
+
+## Admin Dashboard
+<img width="100%" src="./screenshots/admin.png"/>
+
+---
+
+# Authentication
+
+ClassSpace supports secure authentication using college email SSO/OAuth workflows.
+
+Supported flows:
+- Google Workspace
+- College Email OAuth
+- JWT-based session management
+- Secure RBAC authorization
+
+---
+
+# Roadmap
+
+- AI-generated academic insights
+- Smart engagement scoring
+- AI moderation assistant
+- WhatsApp integration
+- Attendance intelligence
+- Multi-class architecture
+- AI-powered operational dashboards
+- Voice-enabled workflows
+
+---
+
+# Built For
+
+OpenAI x Outskill AI Builders Hackathon 2026
+
+---
+
+# Local Development
+
+```bash
+git clone https://github.com/yourusername/classspace.git
+
+cd classspace
+
+npm install
+
+npm run dev
+```
+
+---
+
+# Environment Variables
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+OPENAI_API_KEY=
+```
+
+---
+
+# Vision
+
+ClassSpace is designed to evolve from a classroom collaboration platform into a fully AI-native educational operating system that combines communication, academic workflows, community engagement, and operational intelligence into a unified experience.
+
+---
+
+# License
+
+MIT License
